@@ -1,0 +1,27 @@
+
+mongock:
+  migration-scan-package: com.grandpaweather.config.dbmigrations
+
+openweather:
+  api:
+    url: "https://api.openweathermap.org/data/2.5"
+    key: "2513d8cb6ed7db4a45c83c75859642f6"
+
+spring:
+  application:
+    name: weather-service
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  cloud:
+    config:
+      enabled: false
+  data:
+    mongodb:
+      uri: mongodb://root:rootpassword@localhost:27017/
+      database: weather
