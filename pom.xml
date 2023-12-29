@@ -64,11 +64,6 @@
 			<artifactId>mongodb-springdata-v4-driver</artifactId>
 			<version>5.3.5</version>
 		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>6.0.10.Final</version>
-		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

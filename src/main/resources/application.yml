@@ -12,16 +12,24 @@ spring:
     name: weather-service
   profiles:
     active: local
-
+  cloud:
+    config:
+      enabled: false
 ---
 spring:
   config:
     activate:
       on-profile: local
-  cloud:
-    config:
-      enabled: false
   data:
     mongodb:
       uri: mongodb://root:rootpassword@localhost:27017/
+      database: weather
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  data:
+    mongodb:
+      uri: mongodb+srv://napadovskibohdan:FKz7J6HbxGEQy9qh@cluster0.pmjlj89.mongodb.net/
       database: weather
