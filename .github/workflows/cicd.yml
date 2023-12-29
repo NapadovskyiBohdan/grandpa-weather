@@ -31,7 +31,7 @@ jobs:
     runs-on: [aws-ec2]
     steps:
       - name: Pull image from docker hub
-        run: docker pull napadovskibohdan/grandpa-weather:latest
+        run: docker image pull napadovskibohdan/grandpa-weather:latest
       - name: Delete old container
         run: docker rm -f grandpa-weather-container
       - name: Run docker container
