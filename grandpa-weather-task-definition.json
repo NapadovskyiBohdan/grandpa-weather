@@ -1,13 +1,13 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:381490270597:task-definition/grandpa-weather-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:381490270597:task-definition/grandpa-weather-task-definition:7",
   "containerDefinitions": [
     {
-      "name": "granpda-weather",
+      "name": "grandpa-weather",
       "image": "381490270597.dkr.ecr.eu-north-1.amazonaws.com/grandpa-weather:latest",
       "cpu": 0,
       "portMappings": [
         {
-          "name": "granpda-weather-8080-tcp",
+          "name": "grandpa-weather-8080-tcp",
           "containerPort": 8080,
           "hostPort": 8080,
           "protocol": "tcp",
@@ -36,7 +36,7 @@
   "taskRoleArn": "arn:aws:iam::381490270597:role/ecsTaskExecutionRole",
   "executionRoleArn": "arn:aws:iam::381490270597:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 7,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -74,7 +74,7 @@
     "FARGATE"
   ],
   "requiresCompatibilities": [
-    "FARGATE"
+    "EC2"
   ],
   "cpu": "1024",
   "memory": "3072",
@@ -82,7 +82,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-01-02T11:00:49.205Z",
+  "registeredAt": "2024-01-02T16:38:13.129Z",
   "registeredBy": "arn:aws:iam::381490270597:root",
   "tags": []
 }
