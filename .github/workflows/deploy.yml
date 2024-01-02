@@ -54,7 +54,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [ aws-ec2 ]
+    runs-on: [ weather-runner ]
     steps:
       - name: Pull Image from docker hub
         run: sudo docker pull napadovskibohdan/grandpa-weather:latest
