@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -54,7 +54,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [ weather-runner ]
+    runs-on: [weather-runner]
     steps:
       - name: Pull Image from docker hub
         run: sudo docker pull napadovskibohdan/grandpa-weather:latest
