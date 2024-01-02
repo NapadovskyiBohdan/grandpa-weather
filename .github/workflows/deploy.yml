@@ -1,6 +1,4 @@
-
 name: Deploy to AWS ECS
-
 on:
   push:
     branches: [dev]
@@ -25,13 +23,11 @@ jobs:
           aws-region: 'eu-north-1'
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
         with:
           mask-password: 'true'
-
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
@@ -45,7 +41,6 @@ jobs:
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -53,7 +48,6 @@ jobs:
           task-definition: grandpa-weather-task-definition.json
           container-name: grandpa-weather
           image: ${{ steps.build-image.outputs.image }}
-
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
