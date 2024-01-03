@@ -61,14 +61,14 @@ public class TriggerInitializerChangeUnit {
         List<String> snow = getMediatorIdsByMediatorNameNameList(Arrays.asList("Головний біль", "Біль у суглобах", "Біль у загоєних переломах", "Змінити резину", "Народна медицина"));
 
 
-        triggers.add(Trigger.buildByNameAndDescription("coldSnap", "Snap cold", coldSnap));
-        triggers.add(Trigger.buildByNameAndDescription("suddenWarming", "Sudden warming", coldSnap));
+        triggers.add(Trigger.buildByNameAndDescription("coldsnap", "Snap cold", coldSnap));
+        triggers.add(Trigger.buildByNameAndDescription("suddenwarming", "Sudden warming", coldSnap));
         triggers.add(Trigger.buildByNameAndDescription("fog", "Fog", fog));
         triggers.add(Trigger.buildByNameAndDescription("sand", "Sand", fog));
         triggers.add(Trigger.buildByNameAndDescription("thunderstorm", "Thunderstorm", thunderstorm));
         triggers.add(Trigger.buildByNameAndDescription("snow", "Snow", snow));
         triggers.add(Trigger.buildByNameAndDescription("dust", "Dust", fog));
-        triggers.add(Trigger.buildByNameAndDescription("suddenRain", "Sudden rain", thunderstorm));
+        triggers.add(Trigger.buildByNameAndDescription("suddenrain", "Sudden rain", thunderstorm));
         triggers.add(Trigger.buildByNameAndDescription("clouds", "Clouds", getMediatorIdsByMediatorNameNameList(Arrays.asList("Народна медицина"))));
         triggers.add(Trigger.buildByNameAndDescription("rain", "Rain", rain));
         return triggers;
