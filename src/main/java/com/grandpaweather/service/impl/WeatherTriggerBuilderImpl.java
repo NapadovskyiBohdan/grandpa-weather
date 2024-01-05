@@ -17,8 +17,6 @@ public class WeatherTriggerBuilderImpl implements WeatherTriggerBuilder {
     private static final Logger log = LoggerFactory.getLogger(WeatherTriggerBuilderImpl.class);
     private final TriggerRepository triggerRepository;
 
-
-
     @Override
     public Trigger buildTriggerByWeatherData(WeatherTriggerRelation currentDay, WeatherTriggerRelation nextDay) {
         String triggerName = calculateTriggerNameByWeatherType(currentDay, nextDay);

@@ -1,6 +1,6 @@
 package com.grandpaweather.domain.dto;
 
-import com.grandpaweather.domain.Trigger;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.grandpaweather.domain.WeatherTriggerRelation;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 @Builder
 public class WeatherTriggerDTO {
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
-    private long cityId;
-    private String name;
+    private CityDTO city;
     private Double temp;
     private Double feels_like;
     private Double temp_min;
@@ -30,8 +30,7 @@ public class WeatherTriggerDTO {
     public static WeatherTriggerDTO buildDTOFromEntity(WeatherTriggerRelation relation, TriggerDTO trigger) {
         return WeatherTriggerDTO.builder()
                 .date(relation.getDate())
-                .cityId(relation.getCityId())
-                .name(relation.getName())
+                .city(CityDTO.buildFromEntity(relation.getCity()))
                 .temp(relation.getTemp())
                 .feels_like(relation.getFeels_like())
                 .temp_min(relation.getTemp_min())

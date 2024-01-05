@@ -1,6 +1,5 @@
 package com.grandpaweather.domain.dto;
 
-import com.grandpaweather.domain.Mediator;
 import com.grandpaweather.domain.Trigger;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,9 +16,7 @@ import java.util.List;
 public class TriggerDTO  {
 
     private String id;
-
     private String name;
-
     private String description;
     private List<MediatorDTO> mediators;
 

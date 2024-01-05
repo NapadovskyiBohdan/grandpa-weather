@@ -46,6 +46,11 @@ public class WeatherServiceImpl implements WeatherService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void updateWeatherForCurrentDayByRequest(WeatherRequest request) {
+        calculateTriggerWeatherByRequest(request);
+    }
+
 
     private List<WeatherTriggerRelation> calculateTriggerWeatherByRequest(WeatherRequest request) {
         log.info("Calculating trigger for weather by request {}", request);

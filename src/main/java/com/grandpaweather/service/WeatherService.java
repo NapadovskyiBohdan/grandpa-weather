@@ -11,5 +11,7 @@ public interface WeatherService {
 
     List<WeatherTriggerDTO> getWeatherForCurrentDayByRequest(WeatherRequest request);
 
+    void updateWeatherForCurrentDayByRequest(WeatherRequest request);
+
     ForecastResponse getForecastResponseByRequest(WeatherRequest request);
 }

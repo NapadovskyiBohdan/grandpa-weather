@@ -32,8 +32,8 @@ public class WeatherTriggerManagerImpl implements WeatherTriggerManager {
 
     private final WeatherTriggerBuilder builder;
     private final ProductRepository productRepository;
-    private final MediatorRepository mediatorRepository;
     private final TriggerRepository triggerRepository;
+    private final MediatorRepository mediatorRepository;
     private final WeatherTriggerRelationRepository weatherTriggerRelationRepository;
     private static final Logger log = LoggerFactory.getLogger(WeatherTriggerManagerImpl.class);
 
